@@ -11,3 +11,76 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+a {
+  margin: 10px;
+}
+.card-column{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.logo{
+  background-image: url('./logo.png') no-repeat 0 0;
+}
+.menu{
+  list-style: none;
+  text-decoration: none;
+  font-size: 2em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.menu a{
+  text-shadow: 4px 4px 4px brown;
+  color: rgb(245, 222, 20);
+  text-decoration: none;
+}
+
+.jumbotron{
+  background-color: rgb(68, 51, 51);
+  box-shadow: 3px 3px 12px 12px rgb(126, 106, 84);
+  margin-top: 1em;
+}
+.lead{
+  padding: 1em;
+}
+.aubergiste{
+  width: 70%;
+  height: auto;
+}
+.row{
+  display: flex;
+}
+.card-title{
+  margin-top: 1.5em;
+  font-family: 'Bungee', cursive;
+  text-shadow: 4px 4px 4px black;
+  color: white;
+}
+.card-info-background{
+  background-size: cover;
+  filter: blur(2px);
+  z-index: -1;
+  height:100%;
+}
+.card-info{
+  transform:translate(0, -105%);
+}
+.stat{
+  text-transform: uppercase;
+  font-family:'Raleway', sans-serif; 
+  text-shadow: 4px 4px 4px black;
+  color: white;
+}
+.mana{
+  text-shadow: 4px 4px 4px black;
+  color: blue;
+}
+.attack{
+  text-shadow: 4px 4px 4px black;
+  color: yellow;
+}
+.health{
+  text-shadow: 0.5px 0.5px 0.5px black;
+  color: red;
+}
