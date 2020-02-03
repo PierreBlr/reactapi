@@ -9,6 +9,7 @@ import List from './List';
 import Cards from './Cards';
 import Card from './Card';
 import Home from './Home';
+import Deck from './Deck';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
             <Route path="/home" component={Home} />
             <Route path="/cartes" component={Cards} />
             <Route path="/carte/:cardId" component={Card} />
+            <Route path="/deck" component={Deck} />
           </Switch>
       </header>
     </div>

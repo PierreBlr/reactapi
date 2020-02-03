@@ -9,16 +9,7 @@ const Cards = props => {
 
     const headers = { 'X-RapidAPI-Key' : '92985ffcf7mshdc855b11997ff4cp13f53cjsn34d34d485eed'}
 
-    const R = require("ramda");
-
-
-    
-    //const [cardSets, setCardSets] = useState([]);
-    //const state = { title: "Extension", cardSets: []}
-    //R.concat()
-    
-    
-
+         
     useEffect(() => {
         axios.get("https://omgvamp-hearthstone-v1.p.rapidapi.com/cards",{ headers} )
              .then(response => {setCards(response.data.Basic);
