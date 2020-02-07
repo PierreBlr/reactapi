@@ -9,7 +9,7 @@ const Menu = props => {
     <div>
       <Link to="/home"><img src={Logo}></img></Link><br></br>
         <ul className="nav d-flex">
-          <li className="menu"><Link to="/home">La Taverne</Link></li>
+          <li className="menu"><Link to="/home">L'auberge</Link></li>
           <li className="menu"><Link to="/cartes">Cartes</Link></li>
           <li className="menu"><Link to="/deck">Mon Deck</Link></li>
       </ul>

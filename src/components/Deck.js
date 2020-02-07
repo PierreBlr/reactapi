@@ -1,40 +1,36 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Grid } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 const Deck = props => {
-
-    const [cards, setCards] = useState([]);
     
     const [deckCards, setDeckCards] = useState([]);
-
-    const headers = { 'X-RapidAPI-Key' : '92985ffcf7mshdc855b11997ff4cp13f53cjsn34d34d485eed'}
-    
-
-    useEffect(() => {
-        axios.get("https://omgvamp-hearthstone-v1.p.rapidapi.com/cards",{ headers} )
-             .then(response => {setCards(response.data.Basic);
-             });
-            }, []);
-
     
     useEffect(() => {
-        axios.get(" https://test.corentindesfarges.fr/decks" )
-             .then(response => {setDeckCards(response.data.Basic);
-             });
-            }, []);
+        axios.get("https://test.corentindesfarges.fr/decks").then(response => {setDeckCards(response.data);
+    });
+   }, []);
 
+    function deleteCard(id, idx){
+        axios.delete("https://test.corentindesfarges.fr/decks/" + id).then(data=>{
+            const deck = [...deckCards];
+            deck.splice(idx, 1);
+            setDeckCards(deck);
+        })        
+    }
 
     return (
-        <div className='card-column'>
-            {deckCards.map(function(card) {
+        <div className="card-column">
+        {deckCards.map(function(deckCard, idx) {
             return (
-                <Grid.Column key={card.id}>
-                    <Link to={"/carte/"+ card.id}><img src={card.img}></img></Link>
-                </Grid.Column>
-                );
-            })}
+                <div className="card">
+                    <Link to={"/cartedeck/"+ deckCard.id}><img src={deckCard.img}></img></Link>
+                    <div className="card-body">
+                        <button className="btn btn-danger text-white mt-3 mb-3" onClick={()=>deleteCard(deckCard.id, idx)} >Supprimer du deck</button>
+                    </div>
+                </div>
+            );
+        })}   
         </div>
     );
 };
