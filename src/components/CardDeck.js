@@ -10,7 +10,6 @@ const Card = props => {
         axios.get("https://test.corentindesfarges.fr/decks/"+ props.match.params.cardId).then(response => {setSingleDeckCard(response.data);
     });
    }, []);
-   console.log(singleDeckCard);
    
     return (
         <div className="container-fluid">

@@ -19,7 +19,6 @@ const Card = props => {
 
   
     function addCard(carte){
-        console.log(carte)
         axios.post("https://test.corentindesfarges.fr/decks", carte);
         alert("Ajouté au deck!");
     }
